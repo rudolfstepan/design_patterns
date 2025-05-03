@@ -1,7 +1,16 @@
 # Service Locator
 
 ## Zweck
-Zentralisiert die Bereitstellung von Abhängigkeiten über eine globale Zugriffsschnittstelle.
+Bietet eine zentrale Möglichkeit, auf Abhängigkeiten zuzugreifen – ähnlich einem globalen Container.
+
+## Vorteile
+- Einfachheit für kleine Projekte
+- Zentraler Zugriffspunkt
+
+## Nachteile
+- Versteckte Abhängigkeiten
+- Schwer testbar (kein klarer Konstruktorvertrag)
+- Wird oft als Anti-Pattern betrachtet
 
 ## Beispiel
 ```csharp
@@ -12,11 +21,7 @@ public static class ServiceLocator
     public static void Register<T>(T service) => _services[typeof(T)] = service;
     public static T Get<T>() => (T)_services[typeof(T)];
 }
-
-// Verwendung
-ServiceLocator.Register<IMessageService>(new EmailService());
-var service = ServiceLocator.Get<IMessageService>();
 ```
 
 ## Praxisbezug
-Veraltet im Vergleich zu Dependency Injection – erschwert Testbarkeit und klare Abhängigkeiten.
+Nur in Ausnahmefällen empfehlenswert (z. B. bei Legacy-Code oder vorübergehender Migrationslösung).

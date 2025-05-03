@@ -1,17 +1,34 @@
 # Repository Pattern
 
 ## Zweck
-Kapselt den Datenzugriff und stellt eine domänenspezifische Schnittstelle zur Verfügung.
+Abstrahiert den Datenzugriff, sodass die Geschäftslogik keine Kenntnis über die konkrete Datenquelle benötigt.
+
+## Vorteile
+- Trennung von Datenlogik und Businesslogik
+- Austauschbarkeit der Persistenzschicht
+- Besser testbar mit In-Memory-Repositories
+
+## Nachteile
+- Kann redundant zur ORM-Funktionalität sein (Over-Engineering)
+- Extra-Komplexität bei kleinen Projekten
 
 ## Beispiel
 ```csharp
-public interface IProductRepository
+public interface ICustomerRepository
 {
-    Product GetById(int id);
-    IEnumerable<Product> GetAll();
-    void Add(Product product);
+    Customer GetById(int id);
+    void Add(Customer customer);
+}
+
+public class EfCustomerRepository : ICustomerRepository
+{
+    private readonly MyDbContext _ctx;
+    public EfCustomerRepository(MyDbContext ctx) => _ctx = ctx;
+
+    public Customer GetById(int id) => _ctx.Customers.Find(id);
+    public void Add(Customer customer) => _ctx.Customers.Add(customer);
 }
 ```
 
 ## Praxisbezug
-Wird in Kombination mit Entity Framework Core verwendet, um die Datenzugriffsschicht von der Geschäftslogik zu trennen.
+Standard in Domain-Driven Design, weit verbreitet in Kombination mit Unit of Work.

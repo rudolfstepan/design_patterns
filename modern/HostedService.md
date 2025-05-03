@@ -1,7 +1,16 @@
-# Hosted Services
+# Hosted Service (Hintergrunddienste in ASP.NET Core)
 
 ## Zweck
-Hintergrunddienste, die mit der Anwendung starten.
+Ermöglicht Hintergrundverarbeitung parallel zum Webserver-Betrieb, z. B. für Scheduler, Wartung, E-Mail-Versand oder Queues.
+
+## Vorteile
+- Leichtgewichtig und integriert in ASP.NET Core
+- Lebenszyklussteuerung über Dependency Injection
+- Parallele Verarbeitung außerhalb des HTTP-Kontexts
+
+## Nachteile
+- Kein automatisches Recovery bei Ausfall
+- Muss explizit mit Logging und Fehlerbehandlung versehen werden
 
 ## Beispiel
 ```csharp
@@ -11,12 +20,18 @@ public class MyWorker : BackgroundService
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            Console.WriteLine("Running...");
-            await Task.Delay(1000, stoppingToken);
+            Console.WriteLine("Service läuft...");
+            await Task.Delay(5000, stoppingToken);
         }
     }
 }
+
+// Registrierung in Program.cs
+builder.Services.AddHostedService<MyWorker>();
 ```
 
 ## Praxisbezug
-Für Scheduler, Queues, Hintergrundüberwachung in ASP.NET Core-Apps (z. B. E-Mail-Versand, Wartung).
+Ideal für:
+- wiederkehrende Aufgaben (CRON)
+- Service-Bus-Verarbeitung (RabbitMQ, Kafka)
+- Cleanup- oder Indexierungsjobs
