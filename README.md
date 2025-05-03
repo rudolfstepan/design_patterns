@@ -8,32 +8,32 @@ Die Sammlung enthält klassische Entwurfsmuster sowie ergänzende moderne Prinzi
 
 ### Musterübersicht
 
-| Pattern                       | Typ                | Sprache   |
-|------------------------------|--------------------|-----------|
-| Abstract Factory             | Erzeugungsmuster   | Englisch  |
-| Builder                      | Erzeugungsmuster   | Englisch  |
-| Factory Method               | Erzeugungsmuster   | Englisch  |
-| Prototype                    | Erzeugungsmuster   | Englisch  |
-| Singleton                    | Erzeugungsmuster   | Englisch  |
-| Adapter                      | Strukturmuster     | Englisch  |
-| Bridge                       | Strukturmuster     | Englisch  |
-| Composite                    | Strukturmuster     | Englisch  |
-| Decorator                    | Strukturmuster     | Englisch  |
-| Facade                       | Strukturmuster     | Englisch  |
-| Flyweight                    | Strukturmuster     | Englisch  |
-| Proxy                        | Strukturmuster     | Englisch  |
-| Chain of Responsibility      | Verhaltensmuster   | Englisch  |
-| Command                      | Verhaltensmuster   | Englisch  |
-| Interpreter                  | Verhaltensmuster   | Englisch  |
-| Iterator                     | Verhaltensmuster   | Englisch  |
-| Mediator                     | Verhaltensmuster   | Englisch  |
-| Memento                      | Verhaltensmuster   | Englisch  |
-| Observer                     | Verhaltensmuster   | Englisch  |
-| State                        | Verhaltensmuster   | Englisch  |
-| Strategy                     | Verhaltensmuster   | Englisch  |
-| Template Method              | Verhaltensmuster   | Englisch  |
-| Visitor                      | Verhaltensmuster   | Englisch  |
-| **Dependency Injection**     | Architekturprinzip | **Deutsch** |
+| Pattern                       | Typ                |
+|------------------------------|--------------------|
+| Abstract Factory             | Erzeugungsmuster   |
+| Builder                      | Erzeugungsmuster   |
+| Factory Method               | Erzeugungsmuster   |
+| Prototype                    | Erzeugungsmuster   |
+| Singleton                    | Erzeugungsmuster   |
+| Adapter                      | Strukturmuster     |
+| Bridge                       | Strukturmuster     |
+| Composite                    | Strukturmuster     |
+| Decorator                    | Strukturmuster     |
+| Facade                       | Strukturmuster     |
+| Flyweight                    | Strukturmuster     |
+| Proxy                        | Strukturmuster     |
+| Chain of Responsibility      | Verhaltensmuster   |
+| Command                      | Verhaltensmuster   |
+| Interpreter                  | Verhaltensmuster   |
+| Iterator                     | Verhaltensmuster   |
+| Mediator                     | Verhaltensmuster   |
+| Memento                      | Verhaltensmuster   |
+| Observer                     | Verhaltensmuster   |
+| State                        | Verhaltensmuster   |
+| Strategy                     | Verhaltensmuster   |
+| Template Method              | Verhaltensmuster   |
+| Visitor                      | Verhaltensmuster   |
+| Dependency Injection         | Architekturprinzip |
 
 ## Verwendung
 
